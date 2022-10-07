@@ -4,19 +4,45 @@ import Grid from "@mui/material/Grid";
 import Typography from "@mui/material/Typography";
 import Box from "@mui/material/Box";
 import { AccessTime } from "@mui/icons-material";
+import Rating from "@mui/material/Rating";
+import { createTheme, ThemeProvider } from "@mui/material"
 
-const TourCard = () => {
+const theme = createTheme({
+  MuiTypography: {
+    variant : [
+      {
+        props: {
+          variant: "body2"
+        },
+        style: {
+          fontSize: 11,
+        },
+      },
+      {
+        props: {
+          variant: "body3"
+        },
+        style: {
+          fontSize: 9,
+        },
+      },
+    ]
+  }
+})
+
+const TourCard = ({tour}) => {
   return (
     <Grid item xs={3}>
+      <ThemeProvider theme={theme}>
       <Paper elevation={3}>
         <img
-          src="https://cdn.pixabay.com/photo/2017/01/08/13/58/cube-1963036_960_720.jpg"
+          src={tour.image}
           alt=""
           className=""
         />
         <Box paddingX={1}>
           <Typography variant="subtitle1" component="h2">
-            funciono funciono funciono xd
+            {tour.name}
           </Typography>
           <Box
             sx={{
@@ -25,8 +51,8 @@ const TourCard = () => {
             }}
           >
             <AccessTime sx={{ width: 12.5 }} />
-            <Typography variant="body2" component="p" marginLeft={ .5 } >
-              5 Hours
+            <Typography variant="body2" component="p" marginLeft={.5}>
+              {tour.duration} Hours
             </Typography>
           </Box>
           <Box
@@ -34,10 +60,30 @@ const TourCard = () => {
               display: "flex",
               alingItems: "center",
             }}
+            marginTop={3}
           >
-            </Box>
+            <Rating
+              name="read-only"
+              value={4.5}
+              readOnly
+              precision={0.5}
+              size="small"
+            />
+            <Typography variant="body2" component="p" marginLeft={.5} >
+              {tour.rating} 
+            </Typography>
+            <Typography variant="body2" component="p" marginLeft={1.5} >
+              ({tour.numberOfReviews} review )
+            </Typography>
+          </Box>
+          <Box>
+          <Typography variant="body2" component="p" marginLeft={0} >
+              From C ${tour.price}
+            </Typography>
+          </Box>
         </Box>
       </Paper>
+      </ThemeProvider>
     </Grid>
   );
 };
