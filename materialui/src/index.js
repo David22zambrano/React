@@ -7,12 +7,15 @@ import {
   Routes,
   Route
 } from "react-router-dom";
-
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
+  ReactDOM.render(
+    <BrowserRouter>
+    <Routes>
+      <Route path="/" element={<App />}>
+        {/* <Route path="authentication" element={<Authentication />} /> */}
+      </Route>
+    </Routes>
+  </BrowserRouter>,
+  document.getElementById('root')
 );
 
 // If you want to start measuring performance in your app, pass a function
