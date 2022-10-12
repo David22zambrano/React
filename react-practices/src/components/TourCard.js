@@ -7,6 +7,7 @@ import { AccessTime } from "@mui/icons-material";
 import Rating from "@mui/material/Rating";
 import { createTheme, ThemeProvider } from "@mui/material"
 
+
 const theme = createTheme({
   MuiTypography: {
     variant : [
@@ -38,7 +39,7 @@ const TourCard = ({tour}) => {
         <img
           src={tour.image}
           alt=""
-          className=""
+          className="img"
         />
         <Box paddingX={1}>
           <Typography variant="subtitle1" component="h2">
