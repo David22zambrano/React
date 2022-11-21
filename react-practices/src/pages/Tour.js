@@ -6,6 +6,7 @@ import CustomizedAccordions from "../components/Acorrdian";
 import Paper from '@mui/material/Paper'
 import BottomNavigation from '@mui/material/BottomNavigation'
 import BasicModal from "../components/Modal";
+
 const Tour = () => (
   <Container sx={{ width: 900 }}>
     <Typography variant="h3" component="h1" marginTop={3}>
