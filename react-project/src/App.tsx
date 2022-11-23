@@ -1,12 +1,20 @@
-import { Container } from "@mui/material";
-import React from "react";
-import MuiAppBar from "./components/MuiAppBar";
+import * as React from "react";
+import { Container, Grid, ThemeProvider, CssBaseline } from "@mui/material";
+
+import Login from "./pages/login";
+import Home from "./pages/home";
+import { tema } from "./configuracion/configuracion";
 
 function App() {
   return (
-    <Container>
-      <MuiAppBar></MuiAppBar>
-    </Container>
+    <ThemeProvider theme={tema}>
+
+        <CssBaseline />
+
+        <Home />
+
+        </ThemeProvider>
+
   );
 }
 

@@ -55,7 +55,27 @@ export default function SearchAppBar() {
   return (
     <Box sx={{ flexGrow: 1 }}>
       <AppBar position="static">
-        
+      <Toolbar>
+        <Search>
+            <SearchIconWrapper>
+              <SearchIcon />
+            </SearchIconWrapper>
+            <StyledInputBase
+              placeholder="ID, radicado o asunto"
+              inputProps={{ 'aria-label': 'search' }}
+            />
+          </Search>
+          <IconButton
+            size="large"
+            edge="start"
+            color="inherit"
+            aria-label="open drawer"
+            sx={{ mr: 2 }}
+          >
+           
+          </IconButton>
+          
+        </Toolbar>
       </AppBar>
     </Box>
   );
